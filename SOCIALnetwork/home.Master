@@ -1,0 +1,195 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="home.Master.cs" Inherits="SOCIALnetwork.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link rel="stylesheet" href="BOOTSTRAP/CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="fontawsome/css/all.css">
+    <link href="datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href='https://fonts.googleapis.com/css?family=Sriracha' rel='stylesheet'>
+
+    
+    <script src="BOOTSTRAP/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="BOOTSTRAP/js/popper.min.js"></script>
+    <script src="BOOTSTRAP/js/bootstrap.min.js"></script>
+
+    <title>Home-Artisans Pack</title>
+
+
+     <header>
+    <!-- top headder--
+         
+    <div class="p-xl-1.5 p-lg-1.5 p-md-1.5 p-sm-1 p-xs-1" id="topheadder">
+      <div class="container-fluid" >
+        <div class="row">
+          <div class="container text-right">
+             
+              <!--
+            <a href="tel:8699445512"><i class="fas fa-phone"></i> 8699445512</a>
+            <a href="mailto:artisans.pack@gmail.com"><i class="fas fa-envelope"></i> artisans.pack@gmail.com</a>
+              
+          </div>
+        </div>
+      </div>
+    </div>
+-->
+  </header>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+
+
+
+
+
+
+
+
+<!-- BODY-->
+<body>
+    <form id="form1" runat="server">
+
+
+            <!-- bottom headder-->
+    <div id="bottomheader" class="">
+      <div class="container-fluid text-center border rounded pb-1 " style="background-image:url('/img/bg1234.jpg'); background-position: center; background-size: cover;  ">
+        <nav class="navbar  navbar-expand-md p-sm-0 "  >
+          <div class="mx-auto" >
+             <div class="" >
+                <!-- Logo-->
+                <a href="home.aspx" class="navbar-brand " ">
+                <img src="img/logo123.png" width="130px"  alt="">
+                </a>
+              
+                <button data-toggle="collapse" data-target="#navbarToggler" type="button" class="navbar-toggler" >
+                    <span class="navbar-toggler-icon"  >
+                        
+                    </span>
+                </button>
+                 
+                <div class="collapse navbar-collapse " id="navbarToggler">
+                <!-- NAVBAR ITEAMS-->
+        
+                <ul class="navbar-nav ">
+                    <li class="nav-item ">
+                        <asp:LinkButton class="nav-link" ID="home" runat="server" OnClick="home_Click" PostBackUrl="~/home.aspx">Home <i class="fas fa-home"></i></asp:LinkButton>
+                    </li>
+            
+                    <li class="nav-item dropdown">
+
+                        <asp:LinkButton class="nav-link dropdown-toggle" data-toggle="dropdown" ID="explore" runat="server" Visible="True" OnClick="art_Click">Art <i class="fas fa-paint-brush"></i></asp:LinkButton>
+                        
+                        <div class="dropdown-menu">                      
+                                                   
+                            <asp:LinkButton  class="dropdown-item" ID="LinkButton4" OnClick="painting_Click" runat="server">Painting</asp:LinkButton>
+                            <asp:LinkButton  class="dropdown-item" ID="LinkButton5" OnClick="sketching_Click" runat="server">Sketching</asp:LinkButton>
+                            <asp:LinkButton  class="dropdown-item" ID="LinkButton6" OnClick="photography_Click"  runat="server">Photography</asp:LinkButton>
+                            <asp:LinkButton  class="dropdown-item" ID="LinkButton7" OnClick="writing_Click"  runat="server">Writing</asp:LinkButton>
+                            <asp:LinkButton  class="dropdown-item" ID="LinkButton8" OnClick="craft_Click"  runat="server">Craft</asp:LinkButton>                       
+                        </div>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="message" runat="server" OnClick="feed_Click" PostBackUrl="~/feed.aspx">Feed <i class="fas fa-inbox"></i></asp:LinkButton>                    
+                    </li>
+
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="notification" runat="server" OnClick="explore_Click">Explore <i class="fas fa-search"></i></asp:LinkButton>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <asp:LinkButton class="nav-link dropdown-toggle" data-toggle="dropdown" ID="user" runat="server" Visible="True" OnClick="user_Click">User <i class="fas fa-user-circle"></i></asp:LinkButton>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" href="profile.aspx">Profile <i class="fas fa-user-alt"></i></a>
+                        <a class="dropdown-item" href="settings.aspx">Setting <i class="fas fa-cogs"></i></a>
+                        <asp:LinkButton class="dropdown-item" ID="Logout" runat="server" OnClick="logout_Click">Logout<i class="fas fa-sign-out-alt"></i></asp:LinkButton>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <asp:LinkButton class="nav-link" ID="login" runat="server" OnClick="login_Click" CausesValidation="False">Login <i class="fas fa-sign-in-alt"></i></asp:LinkButton>                    
+                    </li>
+                    <li class="nav-item text-left">
+                        <div class="input-group  ">                            
+                            <asp:TextBox ID="TextBox1" class="nav-link form-control mr-sm-2 "  style=" opacity:.7;" runat="server" Visible="False" placeholder=""></asp:TextBox>
+                            <asp:LinkButton ID="Button1" class="btn btn-link  nav-link " style=" padding:0px; margin:auto; font-family: Billabong; font-size: xx-large; font-weight: 500;"  runat="server" Text="Search" OnClick="search_Click" Visible="False" ForeColor="#443E82"/>
+                            <asp:Label ID="Label1" class="nav-link" style="font-size: xx-large; font-family: Billabong;" runat="server" Text="" Visible="False" ForeColor="Red"></asp:Label>
+                         </div>
+                    </li> 
+                </ul>
+                </div>
+                </div>
+            </div>
+        </nav>
+      </div>
+    </div>
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+
+
+
+        <!-- FOOTER-->
+       <footer id="full-footer">
+       <div class="container-fluid top-footer p-md-3 pl-xs-2 bg-dark" >
+        <div class="row">
+          <div class="col-md-4 p-1">
+            <img src="img/logo12.PNG" alt="" width="180px" class="img-fluid">
+            <p>
+              Artisan Pack is an art community for anyone and everyone that 
+              creates.... <a href="">Read more...</a>
+              <div></div>
+            <a style="color: white;" class="p-1" href=""><i class="fab fa-2x fa-facebook-square"></i></a>
+            <a style="color: white" class="p-1" href=""><i class="fab fa-2x fa-instagram-square"></i></a>
+            <a style="color: white;" class="p-1" href=""><i class="fab fa-2x fa-twitter-square"></i></a>
+            <a style="color: white;" class="p-1" href=""><i class="fab fa-2x fa-google-plus-square"></i></a>
+            <a style="color: white;" class="p-1" href=""><i class="fab fa-2x fa-pinterest-square"></i></a>
+          </div>
+          <div class="col-md-4 pl-xs-2">
+            <h3>Important Links</h3>
+              <asp:LinkButton ID="LinkButton1" class="footerlink" runat="server">Privacy Policy</asp:LinkButton>
+              <br />
+              <asp:LinkButton ID="LinkButton2" class="footerlink" runat="server" PostBackUrl="aboutus.aspx">About Us</asp:LinkButton>
+              <br />
+              <asp:LinkButton ID="LinkButton3" class="footerlink" runat="server" PostBackUrl="terms.aspx">Terms</asp:LinkButton>
+
+              <!--
+            <a href="">Privacy Policy</a> <br>
+            <a href="">About Us</a><br>
+            <a href="">Terms</a><br>
+              -->
+            
+          </div>
+          <div class="col-md-4 pl-xs-2">
+              <h3>Inquiry</h3>
+              <a href="">Contact Us</a><br>
+              <a href="mailto:shubham.hetta@gmail.com"><i class="fas fa-envelope"></i> artisan.pack@gmail.com</a>
+              <div class="embed-responsive embed-responsive-16by9">
+                <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3428.465858063414!2d76.76659661513212!3d30.76150198162713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6d7e78a9ba746a24!2sDr.%20A.%20P.%20J.%20Abdul%20Kalam%20Computer%20Centre!5e0!3m2!1sen!2sin!4v1607359429853!5m2!1sen!2sin" frameborder="0"></iframe>   
+              </div>
+          </div>
+    
+        </div>
+       </div>
+       <!-- BOOTOM FOOTER-->
+       <div class="container-fluid bottom-footer">
+        <div class="col-12 text-center">
+          <p>&copy Copyrights 2020-All Rights Reserved</p>
+        </div>
+       </div>
+     </footer>
+     
+ 
+
+    </form>
+</body>
+</html>

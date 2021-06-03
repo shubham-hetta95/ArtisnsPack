@@ -1,0 +1,105 @@
+/**/
+#topheadder {
+    background-color: #443E82;
+    border: 0px #140a0a;
+}
+    #topheadder a {
+        color: #443E82;
+        font-weight: 500;
+        font-size: .89rem;
+    }
+#bottomheader ul li a {
+    color: #443E82;
+    font-weight: 500;
+    font-size: x-large;
+    font-family: Billabong;
+}
+.nav {
+    padding:0;
+}
+
+.button{
+    color: black;
+}
+.simplecard {
+    background-color: rgba(245, 245, 245, 1);
+    opacity: .8;
+}
+.container-fluid{
+    padding-left:0 ;
+    padding-right: 0;
+    padding-top:0 ;
+    padding-bottom: 0;
+}
+
+    
+
+}
+
+.full-footer{
+
+
+}
+.top-footer p {
+    color: #ffffff;
+    font-family: Billabong;
+    font-size: x-large;
+}
+.top-footer a {
+    color: #ffffff;
+    font-weight: 500;
+    font-family: Billabong;
+    font-size: x-large;
+}
+
+.top-footer h3 {
+    color: #ffffff;
+    font-weight: 500;
+    font-family: Billabong;
+    font-size:x-large;
+}
+.bottom-footer{
+background-color: rgb(65, 58, 68);
+}
+.bottom-footer p{
+    color: white;
+}
+.bg-img {
+    /* The image used */
+    background-image: min-height: 80px;
+    background-image: url('/img/painting.jpg');
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Needed to position the navbar */
+    position: relative;
+}
+.checkbox label::before {
+    margin-left: 0px;
+}
+
+
+
+<!-- signup -->
+.footerlinks {
+    color: #ffffff;
+    text-decoration: none !important;
+}
+
+    .footerlinks:hover {
+        color: #ffd800;
+    }
+
+#footer1 {
+    background: #762b00;
+}
+
+#footer2 {
+    background: #531f00;
+}
+-->
+
+.aboutus {
+    background-color: #576574;
+}
